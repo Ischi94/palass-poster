@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Marine origination rates linked to interactions of past temperature trends with short-term climate change</title>
+
+<script src="poster-mathes_files/header-attrs-2.5/header-attrs.js"></script>
+<link href="poster-mathes_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="poster-mathes_files/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+<style>
+@page {
+size: 46in 32in;
+margin: 0;
+padding: 0;
+background-color: #ffffff;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: 46in;
+height: 32in;
+text-align: justify;
+font-size: 35px;
+background-color: #FFFFFF;
+color: #000000;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #354E7124;
+color: #841F27;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: 25pt;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #841F2720;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: 20pt;
+font-style: italic;
+padding-top: 0;
+}
+.references {
+font-size: 20px;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: 46in;
+height: 32in;
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%;
+-webkit-column-rule-style: solid;
+-moz-column-rule-style: solid;
+column-rule-style: solid;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+-webkit-column-gap: 50%;
+background-color: #ffffff;
+font-family: Merriweather;
+color: #000000;
+}
+span.citation {
+  color: #354E71;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: #354E71;
+}
+#title {
+font-size: 100pt;
+text-align: left;
+margin: 0;
+line-height: 90%;
+border-bottom: 0;
+}
+#author {
+color: #841F27;
+margin: 0;
+line-height: 90%;
+font-size: 1.17em;
+}
+#affiliation {
+padding-top: 1em;
+color: #00000060;
+font-style: italic;
+font-size: 25px;
+margin: 0;
+}
+sup {
+color: #cc0000;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author sup {
+font-size: 30px;
+}
+.author_extra {
+color: #354E71;
+margin: 0;
+line-height: 85%;
+font-size: 35px;
+}
+.outer h1 {
+text-align: center;
+margin-top: 0.5in;
+margin-bottom: 0.5in;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p {
+color: #000000;
+}
+.outer ol {
+text-align: left;
+}
+.main {
+width: calc(46in / 2);
+height: 32in;
+position: absolute;
+margin-left: calc(46in / 4);
+background-color: #841F27;
+color: #FFFFFF90;
+font-family: Lora;
+background-image: linear-gradient(#841F27 50%, #354E71);
+}
+.main strong {
+color: #FFFFFF;
+}
+img.main-img-left {
+width: 20%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+img.main-img-right {
+width: 18%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+.main p {
+padding-top: 20%;
+font-size: 170px;
+text-align: left;
+}
+.fab {
+color: #00000060;
+font-size: 25px;
+}
+.twitter, i {
+color: #00000060;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #00000060;
+font-size: 35px;
+}
+.envelope {
+color: #00000060;
+font-size: 5px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 46in;
+height: 32in;
+padding: 0cm;
+background-color: #ffffff;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.section {
+  padding-left: 10mm;
+  padding-right: 10mm;
+}
+.main p {
+  padding-left: 30mm;
+  padding-right: 30mm;
+}
+.main_pic {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.orcid img {
+  width: 3%;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+<div class="column outer">
+<br>
+<div class="title section">
+<h1 id="title">Marine origination rates linked to interactions of past temperature trends with short-term climate change</h1>
+<br>
+<h3 id="author" class="author">
+
+Gregor Mathes<sup> 1, 2, <a class="orcid" href="https://orcid.org/0000-0002-2788-1173"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a></sup><br>
+<a class="twitter" href="https://mobile.twitter.com/GregorMathes"><i class="fab fa-twitter"></i>&nbsp;&nbsp;@GregorMathes</a><br>
+
+<a class='envelope'><i class="fas fa-envelope"></i></a> <a href="mailto:gregor.mathes@uni-bayreuth.de" class="email">gregor.mathes@uni-bayreuth.de</a> <br>
+  </h3>
+
+<h5 id="author_extra" class="author_extra">
+ Wolfgang Kiessling<sup>2</sup>
+ Manuel J. Steinbauer<sup>2, 3</sup>
+</h5>
+
+<p id="affiliation" class="affiliation">
+<sup>1</sup> University of Bayreuth, Germany<br> <sup>2</sup> Friedrich-Alexander University Erlangen-Nuremberg, Germany<br> <sup>3</sup> University of Bergen, Norway
+</p>
+
+</div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Biodiversity dynamics are shaped by a complex interplay between current conditions and historic legacy (<span class="citation"><a href="#ref-Antao" role="doc-biblioref">Antao et al.</a> (<a href="#ref-Antao" role="doc-biblioref">2020</a>)</span>, <span class="citation"><a href="#ref-Svenning" role="doc-biblioref">Svenning et al.</a> (<a href="#ref-Svenning" role="doc-biblioref">2015</a>)</span>). While a simple relationship is often used to link evolution with temperature, short-term climate change likely interacts with previous temperature trends when influencing the pace of origination. Such palaeoclimate interactions have been demonstrated for extinction risk, but the effect on evolutionary dynamics is untested</p>
+<p>This poster will be presented interactively and therefore largely refrains from using text. However, you can find a commented version of this poster here.</p>
+<p><br></p>
+</div>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
+<p>We quantified the effect of temperature change interacting with past temperature trends on origination probability using generalised linear mixed effect models with a binomial family error (<span class="citation"><a href="#ref-Bolker" role="doc-biblioref">Bolker et al.</a> (<a href="#ref-Bolker" role="doc-biblioref">2009</a>)</span>):</p>
+<p><span class="math display">\[
+glm (extinct ~ ∆Ttrend : ∆Tchange + (1 | Genus))
+\]</span>
+<br><br />
+<br><br />
+<br></p>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="figures/Violin_plot.png" alt="Total response distributions to palaeoclimate interactions as predicted by generalised linear mixed effect models. Thick grey lines show the mean origination probability per palaeoclimate interaction, and the black line depicts the mean probability for all interactions combined. Asterisks indicate significance for differences of means compared to the overall mean, based on Wilcoxon rank sum tests." width="100%" />
+<p class="caption">
+Figure 1: Total response distributions to palaeoclimate interactions as predicted by generalised linear mixed effect models. Thick grey lines show the mean origination probability per palaeoclimate interaction, and the black line depicts the mean probability for all interactions combined. Asterisks indicate significance for differences of means compared to the overall mean, based on Wilcoxon rank sum tests.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="figures/combined_effect_sizes.png" alt="A) Difference in means between origination probability after cooling-cooling compared to all other palaeoclimate interactions. B) Overall increase of origination probability after cooling-cooling palaeoclimate interactions compared to baseline probability. C) Cohen’s d effect size of the observed change in probability after cooling-cooling palaeoclimate interactions. Red points show estimates given by bootstrapping simulation, brown points estimates given by Bayesian regression, and grey points estimates based on raw output of generalised linear mixed effect models. Grey lines delineate 95% confidence intervals." width="80%" />
+<p class="caption">
+Figure 2: A) Difference in means between origination probability after cooling-cooling compared to all other palaeoclimate interactions. B) Overall increase of origination probability after cooling-cooling palaeoclimate interactions compared to baseline probability. C) Cohen’s d effect size of the observed change in probability after cooling-cooling palaeoclimate interactions. Red points show estimates given by bootstrapping simulation, brown points estimates given by Bayesian regression, and grey points estimates based on raw output of generalised linear mixed effect models. Grey lines delineate 95% confidence intervals.
+</p>
+</div>
+<p><br></p>
+<p><strong>Disclaimer</strong></p>
+<p>This poster was created using open software tools and builds on the R package <a href="https://github.com/brentthorne/posterdown">posterdown</a>. You can find the source code to reproduce this poster <a href="https://github.com/Ischi94/palass-poster">here</a>.</p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Antao" class="csl-entry">
+Antao, Laura, Amanda Bates, Shane Blowes, Conor Waldock, Sarah Supp, and Anne Magurran. 2020. <em>Temperature-Related Biodiversity Change Across Temperate Marine and Terrestrial Systems</em>. Nature ecology &amp; evolution.
+</div>
+<div id="ref-Bolker" class="csl-entry">
+Bolker, Benjamin, Mollie Brooks, Connie Clark, Shane Geange, John Poulsen, Henry Stevens, and Jada-Simone White. 2009. <em>Generalized Linear Mixed Models: A Practical Guide for Ecology and Evolution</em>. Trends in ecology &amp; evolution.
+</div>
+<div id="ref-Svenning" class="csl-entry">
+Svenning, Jens-Christian, Wolf Eiserhardt, Signe Normand, Alejandro Ordonez, and Brody Sandel. 2015. <em>The Influence of Paleoclimate on Present-Day Patterns in Biodiversity and Ecosystems</em>. Annu. Rev. Ecol. Evol. Syst.
+</div>
+</div>
+</div>
+
+</div>
+<div class="main">
+<p>Origination probability in marine fossil groups is largely affected by palaeoclimate interactions</p>
+<img src="figures/logo_bayreuth.png" class="main-img-left" />
+<img src="figures/erlangen_logo.jpg" class="main-img-right" />
+</div>
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "true";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+
+
+</body>
+</html>

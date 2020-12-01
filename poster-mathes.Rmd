@@ -1,0 +1,92 @@
+---
+title: Marine origination rates linked to interactions of past temperature trends with short-term climate change
+author:
+  - name: Gregor Mathes
+    affil: 1, 2  
+    twitter: GregorMathes
+    email: gregor.mathes@uni-bayreuth.de
+    orcid: 0000-0002-2788-1173
+    main: true
+  - name: Wolfgang Kiessling
+    affil: 2  
+  - name: Manuel J. Steinbauer
+    affil: 2, 3
+affiliation:
+  - num: 1
+    address: University of Bayreuth, Germany
+  - num: 2
+    address: Friedrich-Alexander University Erlangen-Nuremberg, Germany
+  - num: 3
+    address: University of Bergen, Norway
+main_findings:
+  - "Origination probability in marine fossil groups is largely affected by palaeoclimate interactions"
+logoleft_name: '![](/home/gregor/Dokumente/PhD/palass-poster/figures/logo_bayreuth.png){.main-img-left}'
+logoright_name: '![](/home/gregor/Dokumente/PhD/palass-poster/figures/erlangen_logo.jpg){.main-img-right}'
+output: 
+  posterdown::posterdown_betterland:
+    self_contained: false
+    pandoc_args: --mathjax
+    highlight: haddock
+    number_sections: false
+link-citations: true
+bibliography: packages.bib
+primary_colour: "#841F27"
+secondary_colour:	"#354E71"
+main_fontfamily: "Lora"
+font_family: "Merriweather"
+caption_textsize: "25pt"
+body_textsize: "35px"
+title_textsize: "100pt"
+
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(results = 'asis',
+                      echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+``` 
+
+
+## Introduction
+
+Biodiversity dynamics are shaped by a complex interplay between current conditions and historic legacy (@Antao, @Svenning). While a simple relationship is often used to link evolution with temperature, short-term climate change likely interacts with previous temperature trends when influencing the pace of origination. Such palaeoclimate interactions have been demonstrated for extinction risk, but the effect on evolutionary dynamics is untested
+
+
+This poster will be presented interactively and therefore largely refrains from using text. However, you can find a commented version of this poster here.  
+
+
+<br>  
+
+## Methods
+
+We quantified the effect of temperature change interacting with past temperature trends on origination probability using generalised linear mixed effect models with a binomial family error (@Bolker):
+
+$$
+glm (extinct ~ ∆Ttrend : ∆Tchange + (1 | Genus))
+$$
+<br>  
+<br>  
+<br>  
+
+## Results
+
+```{r, fig.cap='Total response distributions to palaeoclimate interactions as predicted by generalised linear mixed effect models. Thick grey lines show the mean origination probability per palaeoclimate interaction, and the black line depicts the mean probability for all interactions combined. Asterisks indicate significance for differences of means compared to the overall mean, based on Wilcoxon rank sum tests.', out.width="100%"}
+knitr::include_graphics("/home/gregor/Dokumente/PhD/palass-poster/figures/Violin_plot.png")
+```  
+  
+
+```{r, fig.cap='A) Difference in means between origination probability after cooling-cooling compared to all other palaeoclimate interactions. B) Overall increase of origination probability after cooling-cooling palaeoclimate interactions compared to baseline probability. C) Cohen’s d effect size of the observed change in probability after cooling-cooling palaeoclimate interactions. Red points show estimates given by bootstrapping simulation, brown points estimates given by Bayesian regression, and grey points estimates based on raw output of generalised linear mixed effect models. Grey lines delineate 95% confidence intervals.', out.width="80%"}
+knitr::include_graphics("/home/gregor/Dokumente/PhD/palass-poster/figures/combined_effect_sizes.png") 
+```  
+<br>  
+  
+**Disclaimer**
+  
+This poster was created using open software tools and builds on the R package [posterdown](https://github.com/brentthorne/posterdown). You can find the source code to reproduce this poster [here](https://github.com/Ischi94/palass-poster).  
+
+## References
