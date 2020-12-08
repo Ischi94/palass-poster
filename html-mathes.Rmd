@@ -1,0 +1,61 @@
+---
+title: "Marine origination rates linked to interactions of past temperature trends with short-term climate change"
+author: "Gregor Mathes"
+date: "2020-08-12"
+subtitle: 'Text version'
+summary: 'This is an extension to my poster presentation for the Annual Meeting 2020 of the Palaeontological Association. As the poster has less text for visual pleasure and the whole poster is presented in an interactive context, the poster alone will not be sufficient to understand the project. To overcome this issue, and to render my poster presentation more accessible, I have added this html file with further details of our project'
+authors: [Gregor Mathes]
+lastmod: '2020-08-12T12:07:04+02:00'
+featured: no
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 1
+    number_sections: true
+    fig_width: 6
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.dim=c(7,4))
+```
+
+# Introduction  
+  
+This is an extension to my poster presentation for the [Annual Meeting 2020 of the Palaeontological Association](https://www.palass.org/meetings-events/annual-meeting). As the poster has less text for visual pleasure and the whole poster is presented in an interactive context, the poster alone will not be sufficient to understand the project. To overcome this issue, and to render my poster presentation more accessible, I have added this html file with further details of our project.  
+The poster itself is deposited on [github](https://github.com/Ischi94/palass-poster) including all open source code to (re-)produce the poster. You can take at look at the html poster by clicking on [this link](http://htmlpreview.github.io/?https://github.com/Ischi94/palass-poster/blob/main/poster-mathes.html).  
+  
+  
+# Project summary  
+  
+This is the second project of my PhD, which is embedded in a research unit called [Tersane](https://cnidaria.nat.uni-erlangen.de/wp/index.php/project/research/project-pastkey/). This project is currently developped together with [Manuel Steinbauer](https://www.spowi5.uni-bayreuth.de/de/team/steinbauer/index.php) and [Wolfgang Kiessling](https://www.gzn.nat.fau.de/palaeontologie/team/professors/kiessling/).  
+    
+## Motivation  
+  
+Deciphering the relationship between temperature and the history of life on Earth on multiple scales is a major goal of nature sciences. However, previous studies on the relationship between temperature and diversity came to ambiguous conclusions, ranging from a negative relationship, no relationship, to a positive one. The results of a previous project (accepted for publication in *Nature Ecology and Evolution*) show that complex interactions of climate and evolutionary dynamics exist, rendering the relationship between temperature and diversity non-linear. We hence used a novel modelling to account for these cascading effects.  
+  
+## Methodology  
+  
+We analysed how global trajectories of palaeoclimate can affect origination probabilities of twelve marine fossil phyla in the last 485 million years (*Annelida, Arthropoda, Brachiopoda, Bryozoa, Chordata, Cnidaria, Echinodermata, Foraminifera, Hemichordata, Mollusca, Nematoda, Porifera*). All analysis was conducted on stage-level. Genus-level data was downloaded from the [Paleobiology Database](https://paleobiodb.org/#/) and subsequently cleaned and sample-standardised.  
+We further calculated palaeoclimate interactions, which are defined as the interaction of short-term climate change with long-term temperature trends. We used these as explanatory variables for origination likelihood of each phyla on genus-level. All temperature estimates were based on delta<sup>18</sup>O values.  
+We developped a dynamic modeling framework using generalised linear mixed effect models with a binomial family error:
+
+$$
+glm (extinct ~ ∆Ttrend : ∆Tchange + (1 | Genus))
+$$ 
+
+We then tested whether cumulative palaeoclimate interactions increase the origination probability of fossil taxa, which might explain the perceived ambiguity of existing studies on the relationship of temperature and biodiversity in Earth’s history.  
+  
+# Results  
+  
+## Origination probability  
+  
+Cooling-cooling palaeoclimate interactions (i.e., short-term cooling adding on top of a long-term cooling trend) resulted in an increased origination probability. We compared the origination probability for marine groups per palaeoclimate interaction, based on the output of our regression models. The overall origination response was on average lower after cooling-warming, warming-cooling, and warming-warming palaeoclimate interactions compared to the average origination probability of 13.2% (p < 0.001, Wilcoxon rank sum test). On the contrary, cooling-cooling palaeoclimate interactions resulted in an increased mean origination response of 14.8%.  
+  
+## Effect size  
+  
+The effect of cooling-cooling palaeoclimate interactions on origination probability is large. The absolute difference between the mean origination probability of cooling-cooling compared to all other palaeoclimate interactions was 3.2 (Bayesian estimation, 95% CI [3.1, 3.2]). This difference represents a 23.7% increase compared to all other interactions (Bayesian estimation, 95% CI [23.2%, 24.2%]). We evaluated the effect size of cooling-cooling on origination probability using Cohen’s d statistic, a frequently applied measure used to indicate the standardised difference between two means. Cohen’s d for cooling-cooling was greater than 1, indicating a large effect size (Bayesian estimation, 95% CI [1.0, 1.1]).  
+  
+# Discussion  
+  
+The interplay of short-term climate cooling adding to a long-term average global cooling resulted in a sharp increase of origination probability. We found this effect to be consistent through time and across all studied groups. We emphasize that our results can only provide statistical conclusions, but no causal inferences. Causes for the detected effect might be manifold but are likely connected to eustatic sea level subsidence caused by global cooling. A drop in sea level due to glaciation results in reduced continental shelf area, which is the main habitat for the majority of the studied fossil groups. Increased habitat fragmentation and loss is correlated to the rate of ecological interactions and speciation rates. Low sea levels lead to increased nutrient availability in the marine realm through exposure of continental shelf area to weathering, a process known to drive genus origination rates. The combination of short-term cooling on top of a long-term cooling trend exacerbates eustatic sea level drop, thus potentially reinforcing habitat fragmentation and loss as well as nutrient availability, leading to increased origination rates.  
+
