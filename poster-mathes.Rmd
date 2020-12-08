@@ -10,7 +10,7 @@ author:
   - name: Wolfgang Kiessling
     affil: 2  
   - name: Manuel J. Steinbauer
-    affil: 2, 3
+    affil: 1, 3
 affiliation:
   - num: 1
     address: University of Bayreuth, Germany
