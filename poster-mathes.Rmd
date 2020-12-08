@@ -57,7 +57,7 @@ options(knitr.table.format = "html")
 Biodiversity dynamics are shaped by a complex interplay between current conditions and historic legacy (@Antao, @Svenning). While a simple relationship is often used to link evolution with temperature, short-term climate change likely interacts with previous temperature trends when influencing the pace of origination. Such palaeoclimate interactions have been demonstrated for extinction risk, but the effect on evolutionary dynamics is untested
 
 
-This poster will be presented interactively and therefore largely refrains from using text. However, you can find a commented version of this poster here.  
+This poster will be presented interactively and therefore largely refrains from using text. However, you can find a commented version of this poster [here](http://htmlpreview.github.io/?https://github.com/Ischi94/palass-poster/blob/main/html-mathes.html).  
 
 
 <br>  
